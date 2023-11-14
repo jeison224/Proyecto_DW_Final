@@ -21,6 +21,14 @@ const errorResponsePropTypes = PropTypes.shape({
   }),
 });
 
+const AccessTokenResponseProptypes = PropTypes.shape({
+  statusCode: PropTypes.number,
+  body: PropTypes.shape({
+    accessToken: PropTypes.string,
+  }),
+  error: PropTypes.string,
+});
+
 function MyComponent(props) {
   return (
     <div>
@@ -41,7 +49,7 @@ function MyComponent(props) {
 }
 
 MyComponent.propTypes = {
-  response: PropTypes.oneOfType([authResponsePropTypes, errorResponsePropTypes]),
+  response: PropTypes.oneOfType([authResponsePropTypes, errorResponsePropTypes,AccessTokenResponseProptypes]),
 };
 
 export default MyComponent;

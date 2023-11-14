@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
       );
     }
     const newUser = new User({ usuario, nombre, contraseña });
-    newUser.save();
+    await newUser.save();
     res
       .status(200)
       .json(jsonResponse(200, { message: "Usuario creado con exito" }));

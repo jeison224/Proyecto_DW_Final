@@ -25,23 +25,25 @@ export default function Login() {
                     contraseña,
                 }),
             });
-            if (response.ok) {
-                console.log("Ingreso Exitoso");
-                console.log(auth);
 
-                setErrorResponse("");
-                const json = (await response.json());
-                if (json.body.accessToken && json.body.refreshToken) {
-                    auth.saveUser(json);
-                    console.log("Redirigiendo a /dashboard");
-                    goTo("/dashboard");
-                }
-            } else {
+            if (!response.ok) {
                 console.log("Parece que hubo un error");
                 const json = await response.json();
                 setErrorResponse(json.body.error);
                 return;
             }
+
+            console.log("Ingreso Exitoso");
+            setErrorResponse("");
+            const json = await response.json();
+            console.log("Datos de inicio de sesión:", json); // Agrega este registro de consola
+            if (json.body.accessToken && json.body.refreshToken) {
+                auth.saveUser(json);
+                console.log("Redirigiendo a /dashboard");
+                goTo("/dashboard");
+
+            }
+
         } catch (error) {
             console.log(error);
         }
@@ -50,22 +52,23 @@ export default function Login() {
     if (auth.isAuthenticated) {
         return <Navigate to="/dashboard" />
     }
-    return( 
+
+    return (
         <DefaultLayout>
             <form className="form" onSubmit={handleSubmit}>
-            <h1>Login</h1>
-            {!!errorResponse && (<div className="MensajeError">{errorResponse}</div>)}
-            <label>Usuario</label>
-            <input type="text" value={usuario}
-                onChange={(e) => setUsuario(e.target.value)}
-            />
+                <h1>Login</h1>
+                {!!errorResponse && (<div className="MensajeError">{errorResponse}</div>)}
+                <label>Usuario</label>
+                <input type="text" value={usuario}
+                    onChange={(e) => setUsuario(e.target.value)}
+                />
 
-            <label>Contraseña</label>
-            <input type="password" value={contraseña}
-                onChange={(e) => setContraseña(e.target.value)}
-            />
+                <label>Contraseña</label>
+                <input type="password" value={contraseña}
+                    onChange={(e) => setContraseña(e.target.value)}
+                />
 
-            <button>Iniciar Sesion</button>
+                <button>Iniciar Sesion</button>
             </form>
         </DefaultLayout>
     );
