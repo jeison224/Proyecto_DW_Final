@@ -56,7 +56,7 @@ export default function Login() {
     return (
         <DefaultLayout>
             <form className="form" onSubmit={handleSubmit}>
-                <h1>Login</h1>
+                <h1>INGRESO</h1>
                 {!!errorResponse && (<div className="MensajeError">{errorResponse}</div>)}
                 <label>Usuario</label>
                 <input type="text" value={usuario}

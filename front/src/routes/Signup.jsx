@@ -3,6 +3,8 @@ import DefaultLayout from "../layout/DefaultLayout";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthProvider";
 import { API_URL } from "../auth/constants";
+import "../estilos/signup.css";
+
 
 export default function SignUp(){
     const [nombre,setNombre] = useState("");

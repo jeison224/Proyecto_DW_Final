@@ -1,0 +1,10 @@
+.ejercicios-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ejercicios-section h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}

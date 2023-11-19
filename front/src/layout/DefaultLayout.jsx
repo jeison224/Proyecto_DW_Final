@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import '../estilos/DefaultLayout.css'
 
 export default function DefaultLayout({ children }) {
   return (

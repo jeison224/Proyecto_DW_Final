@@ -1,0 +1,63 @@
+.Suplementos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Suplementos h2{
+    color: #ffffff;
+}
+
+.listar2 {
+    border: 1px solid #ccc;
+    padding: 0.50rem;
+    margin: 0rem;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7)
+}
+
+.Suplementos div {
+    display: flex;
+    color: #333;
+    margin-bottom: 2rem;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.listar2 h3 {
+    padding: 5%;
+    margin: 0rem;
+    width: 200px;
+    text-align: center;
+    color: black;
+}
+
+.listar2 p {
+    padding: 5%;
+    margin: 0rem;
+    width: 200px;
+    text-align:left;
+}
+.listar2 img {
+    width: 70%;            
+    max-height: 200px;     
+    object-fit: cover;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  }
+  .fondo4{
+    background: url('../public/img/ramon.jpg') center/cover no-repeat; 
+    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+  border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.h2fondo4{
+    color:white
+}

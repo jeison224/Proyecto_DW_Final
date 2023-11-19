@@ -1,0 +1,6 @@
+.fondo {
+  background-image: url('../assets/fondo-imagen.jpg');
+  background-size: cover;
+  background-position: center;
+  /* Otros estilos que desees agregar */
+}

@@ -4,6 +4,10 @@ import { API_URL } from "../auth/constants";
 import { json } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import EjerciciosSection from "../componentes/EjerciciosSection";
+import EjerciciosSection2 from "../componentes/EjerciciosCaliSection"
+import Listar from "../componentes/alime-suple/alimentosSection";
+import Listar2 from "../componentes/alime-suple/suplementosSection";
+import ListarVida from "../componentes/Vida-Fitness/fitnessSection";
 import PortalLayout from "../layout/PortalLayout";
 
 export default function Dashboard() {
@@ -64,7 +68,7 @@ export default function Dashboard() {
     return (
         <PortalLayout>
             <div>
-                <h1>Dashboard de {auth.getUser()?.nombre || ""}</h1>
+                <h1>Bienvenido GymRat {auth.getUser()?.nombre || ""}</h1>
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
@@ -76,8 +80,14 @@ export default function Dashboard() {
                     <div key={todo._id}>{todo.title}</div>
                 ))}
                 <Routes>
-          <Route path="/" element={<div>Contenido principal del Dashboard</div>} />
+          <Route path="/" element={<div>Bienvenido, en esta pagina web podras guiarte un poco y darte a conocer sobre la vida fitness</div>} />
           <Route path="/ejercicios" element={<EjerciciosSection />} />
+          <Route path="/Calistenia" element={<EjerciciosSection2 />} />
+          <Route path="/alimentacion" element={<Listar />} />
+          <Route path="/suplementos" element={<Listar2 />} />
+          <Route path="/Vida-Fitnnes" element={<ListarVida />} />
+
+
         </Routes>
             </div>
         </PortalLayout>
